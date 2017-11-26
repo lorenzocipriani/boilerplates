@@ -1,2 +1,2 @@
 # boilerplates
-Best practices for projects
+Best practices and useful snippets for projects
