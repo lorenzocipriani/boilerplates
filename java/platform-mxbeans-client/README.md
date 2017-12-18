@@ -176,4 +176,5 @@ instrumentation to remote applications based on Java Remote Method Invocation
 
 ## References
 [1]. Oracle, "Java Management Extensions (JMX)", [https://docs.oracle.com/javase/tutorial/jmx/index.html](https://docs.oracle.com/javase/tutorial/jmx/index.html)
+
 [2]. Oracle, "Using the Platform MBean Server and Platform MXBeans", [https://docs.oracle.com/javase/7/docs/technotes/guides/management/mxbeans.html](https://docs.oracle.com/javase/7/docs/technotes/guides/management/mxbeans.html)
