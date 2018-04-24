@@ -55,12 +55,12 @@ public class DirectAccess {
 		printClassDefinedFields(ManagementFactory.class.getDeclaredFields());
 		Set managementInterfaces = ManagementFactory.getPlatformManagementInterfaces();
 
-		ManagementInterface.showClassLoading();
-		ManagementInterface.showMemory();
+//		ManagementInterface.showClassLoading();
+//		ManagementInterface.showMemory();
 		ManagementInterface.showThread();
-		ManagementInterface.showRuntime();
-		ManagementInterface.showOperatingSystem();
-		ManagementInterface.showPlatformLogging();
+//		ManagementInterface.showRuntime();
+//		ManagementInterface.showOperatingSystem();
+//		ManagementInterface.showPlatformLogging();
 	}
 
 }

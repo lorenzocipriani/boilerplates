@@ -154,12 +154,35 @@ public class ManagementInterface {
 		boolean lockedMonitors = threadMxb.isCurrentThreadCpuTimeSupported();
 		boolean lockedSynchronizers = threadMxb.isSynchronizerUsageSupported();
 
+		String validPackages = "com.lorenzocipriani";
 		ThreadInfo[] threadDump = threadMxb.dumpAllThreads(lockedMonitors, lockedSynchronizers);
 		System.out.println("");
 		for (ThreadInfo thread : threadDump) {
-			// System.out.println("\nThread ID and name: [" + new
-			// Long(thread.getThreadId()).toString() + "] " + thread.getThreadName());
+			System.out.println("\nThread ID and name: [" + new
+			Long(thread.getThreadId()).toString() + "] " + thread.getThreadName());
 			System.out.println("Thread Info: " + thread.toString());
+
+			StackTraceElement[] stackTraceElements = thread.getStackTrace();
+			System.out.println("Elements in the stack: " + stackTraceElements.length);
+			//for (StackTraceElement ste : stackTraceElements) {
+			int j=0;
+			StackTraceElement ste;
+			for (int i = stackTraceElements.length - 1; i >= 0; i--) {
+				ste = stackTraceElements[i];
+				if (!ste.getClassName().startsWith(validPackages)) {
+					j++;
+				} else {
+					if (j > 0) {
+						System.out.println("Ignored " + j + " elements not related to " + validPackages);
+						j = 0;
+					}
+					System.out.println(ste.toString());					
+				}
+			}
+			if (j > 0) {
+				System.out.println("Ignored " + j + " elements not related to " + validPackages);
+				j = 0;
+			}
 		}
 	}
 
